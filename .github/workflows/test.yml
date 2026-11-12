@@ -74,6 +74,8 @@ jobs:
           sed -i "/google()/a\        maven { url 'https://maven.aliyun.com/repository/google' }" build.gradle
           sed -i "/mavenCentral()/a\        maven { url 'https://maven.aliyun.com/repository/central' }" build.gradle
           sed -i "/mavenCentral()/a\        maven { url 'https://maven.aliyun.com/repository/public' }" build.gradle
+          echo '生成local.properties'
+          echo 'sdk.dir=/usr/local/lib/android/sdk' > local.properties
       - name: Compress Source Code
         if: ${{ env.commit }}
         working-directory: TVBoxOSC
